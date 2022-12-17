@@ -15,7 +15,6 @@ redisClient.connect().catch(error => console.log(error, "Error en Redis"))
 
 
 // Mongo
-const MongoURI = process.env.MONGO_URI || 'mongodb://localhost:8080'
 const mongOptiones = { useNewUrlParser: true, useUnifiedTopology: true }
 
 
@@ -28,7 +27,8 @@ const sesiones = {
     }),
     mongo: session({
         store: MongoStore.create({
-            mongoUrl: `${MongoURI}?dbName=sesionMongo`,
+            mongoUrl: process.env.BASEDATOS_MONGO_URL,
+            dbName: process.env.BASEDATOS_MONGO_NOMBRE,
             mongOptiones,
             ttl: 60,
             collectionName: 'sessions'

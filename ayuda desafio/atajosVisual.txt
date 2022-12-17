@@ -1,0 +1,158 @@
+
+
+Ctrl + z = deshacer
+
+Ctrl + y = rehacer
+
+Ctrl + } = comentar 1 linea o mas de codigo
+
+Ctrl + x = eliminar un linea de codigo
+
+Ctrl + d = seleccionar mismo nombre
+
+Ctrl + b = abre/cierra barra izquierda editores / minimizar la parte del explorer
+
+Ctrl + o = Abrir archivo
+
+Ctrl + n = crear nuevo archivo
+
+Ctrl + k + o = Abrir carpeta
+
+Ctrl + h = remplazar palabra/palabras 
+
+Ctrl + l = comentar toda la linea 
+
+Ctrl + c (x2) = atajo a Deepl (traductor)
+
+Ctrl + Mayus + "> <" = copiar linea y pegar -abajo (solo tocando una linea de codigo), -al lado (comentando la/las linea/as de codigo)
+
+Ctrl + Mayus + w = cerrar visual studio 
+
+Ctrl + w = cerrar ventana archivo visual 
+
+Ctrl + a = seleccionar todo 
+
+
+Alt + flecha arriba/abajo = mueve la linea de codigo arriba/abajo
+
+Alt + Mayus + flecha abajo = para hacer una copia de esa linea de codigo
+
+F11 = Pantalla completa
+
+Abrir paleta de comandos: CTRL + SHIFT + P
+Abrir explorador de archivos: CTRL + SHIFT + E
+Acceder a extensiones (instaladas y para instalar): CTRL + SHIFT + X
+Debug: CTRL + SHIFT + D
+Corte de palabras (Word Wrap): ALT + Z
+Abrir terminal integrado: CTRL + SHIFT + Ñ
+Ver/editar atajos de teclado: CTRL + K+ CTRL + S
+Ordenar el codigo: Shift + Alt + F
+
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
+/*                                               IMPORTS                                                            */
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+                                        framework de programación:
+
+                                        Laravel
+
+                                        https://laravel.com/
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+                                        HOST PAGINA FROND END:
+
+                                        Netlify
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+                                        HOST SERVIDOR BACK END:
+
+                                        Heroku
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+                                        Encuentra el trabajo
+
+                                        Glassdor
+
+                                        https://www.glassdoor.com/index.htm
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+
+CV
+https://www.youtube.com/watch?v=9klfcNgX0VI
+
+
+
+CURRICULUM VITAE
+
+https://www.youtube.com/watch?v=9klfcNgX0VI
+
+
+
+
+
+
+FIREBASE
+https://console.firebase.google.com/u/0/project/basedatosjosegomez/firestore/data/~2Fproductos~2F3AEratHZs4kjhyCVwAo0?hl=es-419&view=panel-view
+
+
+
+MONGO CLOUD
+https://cloud.mongodb.com/v2/637e6f5ec441db2bfe9d8d8c#metrics/replicaSet/637e706ea02ec55dfb3a39e0/explorer/productos/carritos/find
+
+
+
+
+
+
+popper
+https://popper.js.org/
+
+https://chat.openai.com/auth/login
+
+Redis
+puerto: 6379
+
+https://github.com/ivanlcr94/CoderHouseBackend/tree/main/Clase_24_Cookies_Sesiones_Storages_Parte_2/desafio
+
+https://github.com/Lautallarico/TareasBackend/tree/main/desafio12%20-%20Persistir%20datos%20de%20session%20en%20mongo%20atlas
+
+
+
+clase22
+https://docs.google.com/presentation/d/1_wdT9ibN-bnTJXXk5J5ZQZUnTwRl6BPJPYI3QgbM6UM/preview?slide=id.geb91f962fb_0_854
+
+clase24
+https://docs.google.com/presentation/d/1B2G4mLToIxlNE9_gjV0S4_p3rxfxjmxBvcWDogWtI5g/preview?slide=id.ged77f6d7ec_0_1250
+
+clase26
+https://docs.google.com/presentation/d/1jc2JvLefomv1T714rVkKVNsinrQ54Q7tle7Fl43DowQ/preview?slide=id.g1033303fb65_0_8
+
+
+// https://www.youtube.com/watch?v=cOFmiZEoO6Q
+
+// https://www.youtube.com/watch?v=b86zLQsummU
+
+
+// https://www.youtube.com/watch?v=G26_J7fxta4
+
+
+
+
+https://coderhouse.zoom.us/rec/play/t3jflFllEfR6JAK-kFEb9lLmhZUToIro5DyYqIWjcPdEha05RU_dyuqEFesFgi4xTDIQWMHuYqVMa4g8.a7vCYMR4KTtdnkCm?continueMode=true&_x_zm_rtaid=9R8nAgOHTP2eEJS6S-zeJg.1671305225213.0dc01898c4fde48256930b5626c3bc70&_x_zm_rhtaid=487
+

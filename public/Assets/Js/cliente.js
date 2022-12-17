@@ -1,5 +1,6 @@
 
 import { datosDesnormalizados, comprencionTotal } from "../Desnormalizacion/index.js"
+
 const socket = io.connect();
 
 // formularios
