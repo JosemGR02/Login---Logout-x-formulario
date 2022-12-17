@@ -1,0 +1,40 @@
+
+<div id="tablaMensajes">
+    {{#if mensajes.length}}
+        {{#each mensajes}}
+        <div class="Mensajeria">
+            {{!-- <p>{{ this.msj.emailForm }}</p>
+            <p>{{ this.msj.msjForm }}</p>
+            <p>{{ this.createDate }}</p> --}}
+
+            {{#if autor.length}}
+                {{#each autor}}
+                    <p>{{ this.id }}</p>
+                    <p>{{ this.nombre }}</p>
+                    <p>{{ this.apellido }}</p>
+                    <p>{{ this.edad }}</p>
+                    <p>{{ this.alias }}</p>
+                    <p>{{ this.avatar }}</p>
+            {{#if texto.length}}
+                <p>{{ this.texto }}</p>
+            <p>{{ this.createDate }}</p>
+        </div>
+        {{/each}}
+    {{/if}}
+</div>
+
+
+
+<style>
+    .titulo {
+        text-align: center;
+    }
+    .Mensajeria {
+        display: flex ;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+
+

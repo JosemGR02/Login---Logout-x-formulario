@@ -1,14 +1,17 @@
 
 
 const loginUsuario = (solicitud, respuesta) => {
-    if (solicitud.session.contador) {
-        solicitud.session.contador++;
-        console.log(`Hola ${solicitud.session.usuario} visitaste nuestra página ${solicitud.session.contador} veces!!`);
+    try {
+        if (solicitud.session.contador) {
+            solicitud.session.contador++;
+            alert(`Hola ${solicitud.session.usuario}, visitaste nuestra página ${solicitud.session.contador} veces!!`);
 
-        respuesta.render('Vistas/view/index.hbs', { respuesta: solicitud.session.usuario })
-    } else {
+            respuesta.render('Vistas/view/index.hbs', { respuesta: solicitud.session.usuario })
+        } else {
+            respuesta.render('Vistas/view/login.hbs');
+        }
+    } catch (error) {
         respuesta.send(500, ' ' + error, "Error al intentar loguearse");
-        respuesta.render('Vistas/view/login.hbs');
     }
 }
 

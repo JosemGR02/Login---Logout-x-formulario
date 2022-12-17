@@ -56,7 +56,7 @@ rutas.delete("/test/:id", (solicitud, respuesta) => {
     }
 });
 
-export { rutas as RutaMock };
+export { rutas };
 
 
 

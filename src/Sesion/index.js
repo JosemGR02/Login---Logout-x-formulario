@@ -1,8 +1,8 @@
 
 import session from 'express-session';
 import { createClient } from 'redis';
-import RedisStore from 'connect-redis'; (session)
-import FileStore from 'session-file-store'; (session)
+import connectRedis from 'connect-redis';
+const RedisStore = connectRedis(session);
 import MongoStore from 'connect-mongo';
 
 
@@ -11,7 +11,6 @@ const redisClient = createClient({
     legacyMode: true,
     url: 'redis://localhost:6379'
 })
-
 redisClient.connect().catch(error => console.log(error, "Error en Redis"))
 
 
@@ -21,15 +20,6 @@ const mongOptiones = { useNewUrlParser: true, useUnifiedTopology: true }
 
 
 const sesiones = {
-    fileStore: session({
-        store: new FileStore({ path: './sesiones', ttl: 60, retries: 0 }),
-        secret: 'secret',
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            maxAge: 60000
-        }
-    }),
     redis: session({
         store: new RedisStore({ client: redisClient, ttl: 60 }),
         secret: 'secret',
@@ -47,9 +37,8 @@ const sesiones = {
         resave: false,
         saveUninitialized: false
     })
-
-
 }
+
 export { sesiones };
 
 
