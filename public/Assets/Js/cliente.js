@@ -34,7 +34,7 @@ const limpiarChat = () => {
 }
 
 const mensajesRenderizados = async (mensajes) => {
-    let respuesta = await fetch('/assets/templates/mensajeriaTemplate.hbs');
+    let respuesta = await fetch('/public/Assets/Vistas/Templates/mensajeriaTemplate.hbs');
     const template = await respuesta.text()
     const templateCompilado = Handlebars.compile(template)
     const html = templateCompilado({ mensajes })
@@ -42,13 +42,20 @@ const mensajesRenderizados = async (mensajes) => {
 }
 
 const renderMensajesDesnormalizados = async (datosDesnormalizados) => {
-    let respuesta = await fetch('/assets/templates/mensajeriaTemplate.hbs');
+    let respuesta = await fetch('/public/Assets/Vistas/Templates/mensajeriaTemplate.hbs');
     const template = await respuesta.text()
     const templateCompilado = Handlebars.compile(template)
     const html = templateCompilado({ datosDesnormalizados })
     contenedorChat.innerHTML = html
 }
 
+const usuariosRenderizados = async (usuarios) => {
+    let respuesta = await fetch('/public/Assets/Vistas/Templates/usuarioTemplate.hbs');
+    const template = await respuesta.text()
+    const templateCompilado = Handlebars.compile(template)
+    const html = templateCompilado({ usuarios })
+    contenedorChat.innerHTML = html
+}
 
 // LISTENERS
 
@@ -88,5 +95,10 @@ socket.on('todos los mensajes', todosMsgs => {
     mensajes = todosMsgs
     limpiarChat()
     mensajesRenderizados(todosMsgs)
+    // renderMensajesDesnormalizados(todosMsgs)
 })
 
+socket.on('evento login'), login => {
+    usuarios = login
+    usuariosRenderizados(login)
+}

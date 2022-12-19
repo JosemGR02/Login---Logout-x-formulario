@@ -57,7 +57,7 @@ servidorHttp.listen(PORT, () => { console.log(`Servidor escuchando en puerto: ${
 
 // EVENTOS
 
-// conexion usuarios
+// conexion socket usuarios
 
 io.on('connection', socket => {
     console.log(`usuario conectado ${socket.id}`);
@@ -69,13 +69,10 @@ io.on('connection', socket => {
         nuevoProducto(socket, io, nuevoProd)
     })
 
-    socket.on('nuevo mensaje', nuevoMsg => {
-        nuevoMensaje(socket, io, nuevoMsg)
-    })
 })
 
 
-// enviar todos
+// enviar todos (msj y prods)
 
 const enviarTodosProds = async (socket) => {
     const todosProds = await DaoProducto.obtenerTodos()

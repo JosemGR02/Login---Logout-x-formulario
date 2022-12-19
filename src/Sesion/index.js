@@ -31,7 +31,7 @@ const sesiones = {
             dbName: process.env.BASEDATOS_MONGO_NOMBRE,
             mongOptiones,
             ttl: 60,
-            collectionName: 'sessions'
+            collectionName: 'sesionesMC'
         }),
         secret: 'secret',
         resave: false,

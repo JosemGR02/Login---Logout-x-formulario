@@ -128,9 +128,13 @@ https://chat.openai.com/auth/login
 Redis
 puerto: 6379
 
+
+
+
 https://github.com/ivanlcr94/CoderHouseBackend/tree/main/Clase_24_Cookies_Sesiones_Storages_Parte_2/desafio
 
 https://github.com/Lautallarico/TareasBackend/tree/main/desafio12%20-%20Persistir%20datos%20de%20session%20en%20mongo%20atlas
+
 
 
 
@@ -144,15 +148,29 @@ clase26
 https://docs.google.com/presentation/d/1jc2JvLefomv1T714rVkKVNsinrQ54Q7tle7Fl43DowQ/preview?slide=id.g1033303fb65_0_8
 
 
+
+
+
+
+
+
 // https://www.youtube.com/watch?v=cOFmiZEoO6Q
 
 // https://www.youtube.com/watch?v=b86zLQsummU
 
-
 // https://www.youtube.com/watch?v=G26_J7fxta4
+
+https://www.youtube.com/watch?v=g0nplsi8hxE
+
+https://www.youtube.com/watch?v=Ei1y51K8jQk
+
+https://www.youtube.com/watch?v=F4Qm32qHXgQ
 
 
 
 
 https://coderhouse.zoom.us/rec/play/t3jflFllEfR6JAK-kFEb9lLmhZUToIro5DyYqIWjcPdEha05RU_dyuqEFesFgi4xTDIQWMHuYqVMa4g8.a7vCYMR4KTtdnkCm?continueMode=true&_x_zm_rtaid=9R8nAgOHTP2eEJS6S-zeJg.1671305225213.0dc01898c4fde48256930b5626c3bc70&_x_zm_rhtaid=487
+
+live previw extencion
+
 
