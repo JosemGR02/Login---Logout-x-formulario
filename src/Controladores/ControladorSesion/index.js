@@ -4,7 +4,7 @@ const loginUsuario = (solicitud, respuesta) => {
     try {
         if (solicitud.session.contador) {
             solicitud.session.contador++;
-            alert(`Hola ${solicitud.session.usuario}, visitaste nuestra página ${solicitud.session.contador} veces!!`);
+            alert(`Hola ${solicitud.session.usuario.nombre}, visitaste nuestra página ${solicitud.session.contador} veces!!`);
 
             respuesta.render('Vistas/view/inicio', { respuesta: solicitud.session.usuario.nombre })
         } else {
@@ -47,3 +47,6 @@ export const controladorSesion = {
     logoutUsuario,
     loginPost
 }
+
+
+// falta la fijar tiempo de expiracion de 10m (sesion), recargable con cada visita del cliente a la pag -> deslogueo

@@ -1,5 +1,16 @@
 
+// const usuariosRenderizados = async (usuarios) => {
+//     let respuesta = await fetch('/public/Assets/Vistas/Templates/usuarioTemplate.hbs');
+//     const template = await respuesta.text()
+//     const templateCompilado = Handlebars.compile(template)
+//     const html = templateCompilado({ usuarios })
+//     contenedorChat.innerHTML = html
+// }
 
+// socket.on('evento login'), login => {
+//     usuarios = login
+//     usuariosRenderizados(login)
+// }
 
 // // Lautallarico
 

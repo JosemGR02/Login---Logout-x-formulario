@@ -69,6 +69,10 @@ io.on('connection', socket => {
         nuevoProducto(socket, io, nuevoProd)
     })
 
+    socket.on('nuevo mensaje', nuevoMsg => {
+        nuevoMensaje(socket, io, nuevoMsg)
+    })
+
 })
 
 
