@@ -4,7 +4,7 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import { Server as ServidorHttp } from "http";
 import { Server as ServidorIO } from "socket.io";
-import { RutaCarrito, RutaProductosTest, RutaProducto, RutaSesiones, RutaMensajes } from "./Rutas/index.js";
+import { RutaCarrito, RutaProductosTest, RutaProducto, RutaSesiones, RutaMensajes, RutaVistas } from "./Rutas/index.js";
 import { sesiones } from './Sesion/index.js';
 import { DaoMensaje, DaoProducto } from "./Dao/index.js";
 import { errorMiddleware } from './Middlewares/index.js';
@@ -44,10 +44,11 @@ app.set('views', './public/Vistas');
 
 
 //Rutas
-app.use('/api/productos', RutaProducto)
-app.use('/api/carrito', RutaCarrito)
-app.use('/api/productos-test', RutaProductosTest)
-app.use('/api/sesion', RutaSesiones);
+app.use('/', RutaVistas);
+app.use('/api/sesiones', RutaSesiones);
+app.use('/api/productos', RutaProducto);
+app.use('/api/carrito', RutaCarrito);
+app.use('/api/productos-test', RutaProductosTest);
 app.use('/api/mensajes', RutaMensajes);
 
 //Servidor

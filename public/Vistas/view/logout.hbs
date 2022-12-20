@@ -1,0 +1,20 @@
+
+<div>
+    <h1> CERRAR SESION </h1>
+    <div class="usuario">
+        <h1 class="alert alert-warning" role="alert">¡Te deslogeaste de la pagina {{this.nombre}}!, ¡Esperamos que nos visites de nuevo!</h1>
+    </div>
+    <button class="btn btn-success" onclick="location.href='/login'">Ir pagina de inicio</button>
+</div>
+
+
+<script>
+    alert('Te estaremos redireccionando a la pagina de Login en 6 segundos');
+    const redireccionar() { location.href = '/login'}
+    setTimeout ("redireccionar()", 6000);
+</script>
+{{!-- (me parecio muy poco 2 segundos) --}}
+
+
+
+

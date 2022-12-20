@@ -6,9 +6,12 @@ const loginUsuario = (solicitud, respuesta) => {
             solicitud.session.contador++;
             alert(`Hola ${solicitud.session.usuario.nombre}, visitaste nuestra página ${solicitud.session.contador} veces!!`);
 
-            respuesta.render('Vistas/view/inicio', { respuesta: solicitud.session.usuario.nombre })
+            // falta la fijar tiempo de expiracion de 10m (sesion),
+            //recargable con cada visita del cliente a la pag -> deslogueo (ttl: 600) 
+
+            respuesta.render('view/home', { respuesta: solicitud.session.usuario.nombre })
         } else {
-            respuesta.render('Vistas/view/login');
+            respuesta.render('view/login');
         }
     } catch (error) {
         respuesta.send(500, ' ' + error, "Error al intentar loguearse");
@@ -22,10 +25,10 @@ const loginPost = (solicitud, respuesta) => {
         solicitud.session.usuario.nombre = usuarioNombre
         solicitud.session.contador = 1;
 
-        respuesta.render('Vistas/view/inicio');
+        respuesta.render('view/home');
     } catch (error) {
         respuesta.send(500, ' ' + error, "Error en el post de login");
-        respuesta.render('Vistas/view/login');
+        respuesta.render('view/login');
     }
 }
 
@@ -34,12 +37,13 @@ const logoutUsuario = (solicitud, respuesta) => {
         const sesionUsuario = solicitud.session.usuario.nombre
         solicitud.session.destroy();
 
-        respuesta.render('Vistas/logout', { usuario: sesionUsuario });
+        respuesta.render('view/logout', { usuario: sesionUsuario });
     } catch (error) {
         respuesta.send(500, ' ' + error, "Error al intentar desloguearse");
-        respuesta.render('Vistas/view/inicio');
+        respuesta.render('view/home');
     }
 }
+
 
 
 export const controladorSesion = {
@@ -49,4 +53,4 @@ export const controladorSesion = {
 }
 
 
-// falta la fijar tiempo de expiracion de 10m (sesion), recargable con cada visita del cliente a la pag -> deslogueo
+

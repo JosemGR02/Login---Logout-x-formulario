@@ -1,6 +1,6 @@
 
-import { denormalizar } from './Utilidades/mocks-utils/normalizar.js';
-import { MensajesNormalizados } from './Utilidades/mocks-utils/normalizar.js';
+import { denormalizar } from './Utilidades/mocks-utils/normalizar.js.js';
+import { MensajesNormalizados } from './Utilidades/mocks-utils/normalizar.js.js';
 
 
 const MensajesDenormalizados = denormalizar(MensajesNormalizados);
