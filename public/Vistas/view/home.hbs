@@ -1,9 +1,11 @@
 
-<div>
-    <h1> PAGINA INICIO </h1>
+<div id="redireccionLogout">
+    <h2> PAGINA INICIO </h2>
     <div class="usuario">
-        <h1 class="alert alert-info" role="alert">¡Bienvenido {{this.nombre}}, ¡Esperamos que disfrutes de tu estadía en nuestra pagina!
-                <button class="btn btn-danger" onclick="location.href='/logout'">Cerrar Sesion</button>
-        </h1>
+        <h3 class="alert alert-info" role="alert">¡Bienvenido     
+            {{#if usuario.length}}
+                {{ usuario }} 
+            {{/if}}! , ¡Esperamos que disfrutes de tu estadía en nuestra pagina!</h3>
+        <button class="btn btn-danger" onclick="location.href='/logout'">Cerrar Sesion</button>
     </div>
 </div>

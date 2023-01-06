@@ -2,8 +2,13 @@
 import { Router } from 'express';
 import { controladorSesion } from "../../Controladores/index.js";
 import { verificarAdmin } from "../../Middlewares/index.js";
+// import { irHome } from "../../Middlewares/index.js";
 
 const ruta = Router();
+
+ruta.get('/', (solicitud, respuesta) => {
+    respuesta.render('home');
+})
 
 ruta.get('/login', controladorSesion.loginUsuario)
 
@@ -16,4 +21,4 @@ export { ruta as RutaSesiones };
 
 
 
-// https://www.youtube.com/watch?v=I03_z5DBgp4
+

@@ -20,7 +20,7 @@ const mongOptiones = { useNewUrlParser: true, useUnifiedTopology: true }
 
 const sesiones = {
     redis: session({
-        store: new RedisStore({ client: redisClient, ttl: 60 }),
+        store: new RedisStore({ client: redisClient, ttl: 600 }),
         secret: 'secret',
         resave: false,
         saveUninitialized: false
@@ -30,7 +30,7 @@ const sesiones = {
             mongoUrl: process.env.BASEDATOS_MONGO_URL,
             dbName: process.env.BASEDATOS_MONGO_NOMBRE,
             mongOptiones,
-            ttl: 60,
+            ttl: 600,
             collectionName: 'sesionesMC'
         }),
         secret: 'secret',

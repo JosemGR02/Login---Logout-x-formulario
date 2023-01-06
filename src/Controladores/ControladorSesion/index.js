@@ -1,56 +1,72 @@
 
-
-const loginUsuario = (solicitud, respuesta) => {
+const home = (solicitud, respuesta) => {
     try {
-        if (solicitud.session.contador) {
-            solicitud.session.contador++;
-            alert(`Hola ${solicitud.session.usuario.nombre}, visitaste nuestra página ${solicitud.session.contador} veces!!`);
-
-            // falta la fijar tiempo de expiracion de 10m (sesion),
-            //recargable con cada visita del cliente a la pag -> deslogueo (ttl: 600) 
-
-            respuesta.render('view/home', { respuesta: solicitud.session.usuario.nombre })
+        if (solicitud.session.usuario) {
+            respuesta.render('view/home', { respuesta: solicitud.session.usuario })
         } else {
             respuesta.render('view/login');
         }
     } catch (error) {
-        respuesta.send(500, ' ' + error, "Error al intentar loguearse");
+        respuesta.send(`${error}, Error al intentar loguearse`);
+    }
+}
+
+const loginUsuario = (solicitud, respuesta) => {
+    try {
+        if (solicitud.session.usuario) {
+            respuesta.render('view/home', { respuesta: solicitud.session.usuario })
+        } else {
+            respuesta.render('view/login');
+        }
+    } catch (error) {
+        respuesta.send(`${error}, Error al intentar loguearse`);
     }
 }
 
 const loginPost = (solicitud, respuesta) => {
     try {
-        const usuarioNombre = solicitud.body || 'sin identificacion';
+        if (!solicitud.body.usuarioNombre) {
+            throw new Error('Sin nombre de usuario, por favor envie su usuario por el formulario');
+        }
+        solicitud.session.usuario = solicitud.body.usuarioNombre;
 
-        solicitud.session.usuario.nombre = usuarioNombre
-        solicitud.session.contador = 1;
-
-        respuesta.render('view/home');
+        solicitud.session.guardar(error => {
+            if (error) {
+                respuesta.send(`${error}, Error al guardar la sesion`);
+            } else {
+                respuesta.render('view/home', { respuesta: solicitud.session.usuario });
+            }
+        })
     } catch (error) {
-        respuesta.send(500, ' ' + error, "Error en el post de login");
-        respuesta.render('view/login');
+        respuesta.send(`${error}, Error en el post de login`);
     }
 }
 
 const logoutUsuario = (solicitud, respuesta) => {
     try {
-        const sesionUsuario = solicitud.session.usuario.nombre
-        solicitud.session.destroy();
+        if (solicitud.session.usuario) {
+            const sesionUsuario = solicitud.session.usuario;
 
-        respuesta.render('view/logout', { usuario: sesionUsuario });
+            solicitud.session.destroy(error => {
+                if (error) {
+                    respuesta.send(`${error}, Error al borrar la sesion`);
+                } else {
+                    respuesta.render('view/logout', { usuario: sesionUsuario });
+                }
+            });
+        }
     } catch (error) {
-        respuesta.send(500, ' ' + error, "Error al intentar desloguearse");
-        respuesta.render('view/home');
+        respuesta.send(`${error}, Error al intentar desloguearse`);
     }
 }
 
 
-
 export const controladorSesion = {
+    home,
     loginUsuario,
     logoutUsuario,
     loginPost
-}
+};
 
 
 
