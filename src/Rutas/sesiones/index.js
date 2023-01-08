@@ -1,24 +1,17 @@
 
 import { Router } from 'express';
 import { controladorSesion } from "../../Controladores/index.js";
-import { verificarAdmin } from "../../Middlewares/index.js";
-// import { irHome } from "../../Middlewares/index.js";
+
 
 const ruta = Router();
 
-ruta.get('/', (solicitud, respuesta) => {
-    respuesta.render('home');
-})
 
-ruta.get('/login', controladorSesion.loginUsuario)
+ruta.get('/', controladorSesion.irHome)
 
-ruta.post('/login', verificarAdmin, controladorSesion.loginPost)
+ruta.post('/login', controladorSesion.inicioSesion)
 
-ruta.get('/logout', controladorSesion.logoutUsuario)
+ruta.get('/logout', controladorSesion.cerrarSesion)
 
 
 export { ruta as RutaSesiones };
-
-
-
 

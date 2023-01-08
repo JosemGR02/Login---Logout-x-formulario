@@ -1,30 +1,19 @@
 
-const home = (solicitud, respuesta) => {
+const irHome = (solicitud, respuesta) => {
     try {
         if (solicitud.session.usuario) {
-            respuesta.render('view/home', { respuesta: solicitud.session.usuario })
+            respuesta.render('view/home', { usuario: solicitud.session.usuario })
         } else {
             respuesta.render('view/login');
         }
     } catch (error) {
-        respuesta.send(`${error}, Error al intentar loguearse`);
+        respuesta.send(`${error}, Error en el get de login`);
     }
 }
 
-const loginUsuario = (solicitud, respuesta) => {
+const inicioSesion = (solicitud, respuesta) => {
     try {
-        if (solicitud.session.usuario) {
-            respuesta.render('view/home', { respuesta: solicitud.session.usuario })
-        } else {
-            respuesta.render('view/login');
-        }
-    } catch (error) {
-        respuesta.send(`${error}, Error al intentar loguearse`);
-    }
-}
-
-const loginPost = (solicitud, respuesta) => {
-    try {
+        console.log(solicitud.body.usuarioNombre)
         if (!solicitud.body.usuarioNombre) {
             throw new Error('Sin nombre de usuario, por favor envie su usuario por el formulario');
         }
@@ -34,7 +23,7 @@ const loginPost = (solicitud, respuesta) => {
             if (error) {
                 respuesta.send(`${error}, Error al guardar la sesion`);
             } else {
-                respuesta.render('view/home', { respuesta: solicitud.session.usuario });
+                respuesta.render('view/home', { usuario: solicitud.session.usuario });
             }
         })
     } catch (error) {
@@ -42,7 +31,7 @@ const loginPost = (solicitud, respuesta) => {
     }
 }
 
-const logoutUsuario = (solicitud, respuesta) => {
+const cerrarSesion = (solicitud, respuesta) => {
     try {
         if (solicitud.session.usuario) {
             const sesionUsuario = solicitud.session.usuario;
@@ -56,17 +45,18 @@ const logoutUsuario = (solicitud, respuesta) => {
             });
         }
     } catch (error) {
-        respuesta.send(`${error}, Error al intentar desloguearse`);
+        respuesta.send(`${error}, Error en el logout`);
     }
 }
 
 
 export const controladorSesion = {
-    home,
-    loginUsuario,
-    logoutUsuario,
-    loginPost
+    irHome,
+    inicioSesion,
+    cerrarSesion
 };
+
+
 
 
 

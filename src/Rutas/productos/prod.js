@@ -1,6 +1,5 @@
 
 import { Router } from "express";
-import { verificarAdmin } from "../../Middlewares/index.js";
 import { controladorProductos } from "../../Controladores/index.js";
 
 
@@ -11,7 +10,7 @@ ruta.get("/", controladorProductos.obtenerTodos);
 
 ruta.get("/:id", controladorProductos.obtenerXid);
 
-ruta.post("/", verificarAdmin, controladorProductos.crearProducto);
+ruta.post("/", controladorProductos.crearProducto);
 
 ruta.delete("/:id", controladorProductos.eliminarXid);
 
