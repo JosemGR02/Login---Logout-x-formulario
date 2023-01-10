@@ -19,7 +19,7 @@ const inicioSesion = (solicitud, respuesta) => {
         }
         solicitud.session.usuario = solicitud.body.usuarioNombre;
 
-        solicitud.session.guardar(error => {
+        solicitud.session.save(error => {
             if (error) {
                 respuesta.send(`${error}, Error al guardar la sesion`);
             } else {

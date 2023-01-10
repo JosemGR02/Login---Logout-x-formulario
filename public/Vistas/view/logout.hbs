@@ -1,19 +1,30 @@
 
-<div id="redireccionHome">
+<body onload="redireccionAutomatica()">
+    <div id="redireccionHome">
     <h2> CERRAR SESION </h2>
     <div class="usuario">
         <h3 class="alert alert-warning" role="alert">¡Te deslogeaste de la pagina {{ usuario }}!, ¡Esperamos que nos visites de nuevo!</h3>
     </div>
-    <button class="btn btn-success" onclick="location.href='/login'">Ir pagina de inicio</button>
-</div>
+        <button class="btn btn-success" onclick="location.href='/api/sesiones/'">Ir pagina de inicio sesion</button>
+    </div>
+</body>
 
+{{!-- Me parecio muy poco 2 segundos (no me estaria funcando la redireccion)  --}}
 
-<script>
-    alert('Te estaremos redireccionando a la pagina de Login en 6 segundos');
-    const redireccionar() { location.href = '/login'}
-    setTimeout ("redireccionar()", 6000);
+<script type="text/javascript">
+    const redireccionAutomatica() {
+        alert('Te estaremos redireccionando a la pagina de Login en 6 segundos');
+
+        const redireccionar() { location.href = '/api/sesiones/'}
+        setTimeout ("redireccionar()", 6000);
+    }
 </script>
-{{!-- (me parecio muy poco 2 segundos) --}}
+
+
+    {{!-- setTimeout( redireccionAutomatica() { window.location.href = '/api/sesiones/'}, 6000 ); --}}
+
+
+
 
 
 

@@ -3,8 +3,8 @@
     <h2> INICIAR SESION </h2>
     <div class="alert alert-success" role="alert">
         <h3> Complete el formulario para crear su usuario </h3>
-        <form id="formularioLogin" action="/login" method="post">
-            <input type="text" id="usuarioNombre" name="usuario" placeholder="Ingrese su nombre" required>
+        <form id="formularioLogin" action="/api/sesiones/login" method="post">
+            <input type="text" id="usuarioNombre" name="usuarioNombre" placeholder="Ingrese su nombre" required>
             <br>
             <button class="btn btn-primary" type="submit">Ingresar</button>
         </form>
