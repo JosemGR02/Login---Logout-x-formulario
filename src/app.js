@@ -44,7 +44,6 @@ app.set('views', './public/Vistas');
 
 
 //Rutas
-// app.use('/', RutaHome);RutaHome
 app.use('/api/sesiones', RutaSesiones);
 app.use('/api/productos', RutaProducto);
 app.use('/api/carrito', RutaCarrito);
